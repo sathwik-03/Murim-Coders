@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Satoshi', sans-serif;
+  background: #000000;
+  color: #F9FAFB;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1F2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8B5CF6, #06B6D4);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #A78BFA, #22D3EE);
+}
+
+/* Utility classes */
+.scroll-animate {
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-in {
+  opacity: 1 !important;
+  transform: translateY(0) translateX(0) !important;
+}
+
+/* Selection styles */
+::selection {
+  background: rgba(139, 92, 246, 0.3);
+  color: white;
+}
+
+/* Focus styles */
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid rgba(139, 92, 246, 0.6);
+  outline-offset: 2px;
+}
+
+/* Link styles */
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Button base styles */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, input, textarea {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Prevent text selection on interactive elements */
+button, .cultivation-orb, .realm-button, .social-portal {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Ensure proper stacking context */
+.fixed, .absolute {
+  transform: translateZ(0);
+}
+
+/* Performance optimizations */
+.ancient-scroll, .sacred-card, .contact-portal {
+  will-change: transform;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .text-gray-300, .text-gray-400 {
+    color: #ffffff;
+  }
+  
+  .border-gray-700 {
+    border-color: #ffffff;
+  }
+}
